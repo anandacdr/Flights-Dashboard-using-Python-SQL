@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import mysql.connector
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# connect to the database server
+try:
+    conn = mysql.connector.connect(
+        host='127.0.0.1',
+        user = 'root',
+        password = '2468',
+        database='ananda'  # add this line to select a database
+    )
+    mycursor = conn.cursor()
+    print("Connected to the database server")
+except:
+    print("Error connecting to the database server")
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
